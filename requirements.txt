@@ -1,3 +1,5 @@
 discord.py
 wikipedia-api
 python-dotenv
+flask
+gunicorn
