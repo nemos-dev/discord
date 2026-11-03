@@ -140,7 +140,7 @@ async def server(interaction: discord.Interaction):
 @bot.tree.command(name="zar", description="1 dan 6 gacha tasodifiy son tashlaydi")
 async def zar(interaction: discord.Interaction):
     natija = random.randint(1, 6)
-    embed = discord.Embed(title="🎲 Zar tashlash", description= chiqish := f"Natija: **{natija}**!", color=discord.Color.blue())
+    embed = discord.Embed(title="🎲 Zar tashlash", description=f"Natija: **{natija}**!", color=discord.Color.blue())
     await interaction.response.send_message(embed=embed)
 
 @bot.tree.command(name="sorov", description="Ovoz berish (sorovnoma) yaratish")
@@ -172,7 +172,6 @@ async def wiki(interaction: discord.Interaction, qidiruv: str):
 async def ob_havo(interaction: discord.Interaction, shahar: str):
     await interaction.response.defer()
     try:
-        # Geocoding to get coordinates
         geo_url = f"https://geocoding-api.open-meteo.com/v1/search?name={shahar}&count=1"
         async with aiohttp.ClientSession() as session:
             async with session.get(geo_url) as resp:
